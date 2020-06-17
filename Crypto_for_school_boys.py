@@ -409,7 +409,17 @@ while prikol:
     if choice == '1':
 
         choice = Zamena()
-        choice.key()
+        ffff = True
+
+        while ffff == True:
+            Choice_na_key = input('•Сгенерировать ключь - Yes or No: ')
+            if Choice_na_key.lower() == 'yes':
+                choice.key()
+                ffff = False
+            elif Choice_na_key.lower() == 'no':
+                ffff = False
+            else:
+                print(Fore.RED + "•Неверная команда!")
         while True:
             vibor_encypt_decrypt = input(
                 "•Зашифровать текст - 1\n" + "•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
@@ -417,48 +427,76 @@ while prikol:
                 File_way = file_check('txt', 'текстом', 'r')
                 choice.encrypt(File_way)
                 print(Fore.GREEN + "•Текс зашифрован•")
+                break
             vibor_encypt_decrypt = input("•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
             if vibor_encypt_decrypt == '2':
                 File_way = file_check('encrypt', 'зашифрованным текстом', 'r')
                 choice.decrypt(File_way)
                 print(Fore.GREEN + "•Текс расшифрован•")
+                break
             elif vibor_encypt_decrypt == '0':
                  break
     elif choice == '2':
         choice = Perestanovka()
-        choice.key()
-        vibor_encypt_decrypt = input(
-            "•Зашифровать текст - 1\n" + "•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
-        if vibor_encypt_decrypt == '1':
-            File_way = file_check('txt', 'текстом', 'r')
-            choice.encrypt(File_way)
-            print(Fore.GREEN + "•Текс зашифрован•")
-        vibor_encypt_decrypt = input("•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
-        if vibor_encypt_decrypt == '2':
-            File_way = file_check('encrypt', 'зашифрованным текстом', 'r')
-            choice.decrypt(File_way)
+        ffff = True
 
-            print(Fore.GREEN + "•Текс расшифрован•")
-        elif vibor_encypt_decrypt == '0':
-            break
+        while ffff:
+            Choice_na_key = input('•Сгенерировать ключь - Yes or No: ')
+            if Choice_na_key.lower() == 'yes':
+                choice.key()
+                ffff = False
+            elif Choice_na_key.lower() == 'no':
+                ffff = False
+            else:
+                print(Fore.RED + "•Неверная команда!")
+        while True:
+            vibor_encypt_decrypt = input(
+                "•Зашифровать текст - 1\n" + "•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
+            if vibor_encypt_decrypt == '1':
+                File_way = file_check('txt', 'текстом', 'r')
+                choice.encrypt(File_way)
+                print(Fore.GREEN + "•Текс зашифрован•")
+                break
+            vibor_encypt_decrypt = input("•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
+            if vibor_encypt_decrypt == '2':
+                File_way = file_check('encrypt', 'зашифрованным текстом', 'r')
+                choice.decrypt(File_way)
+
+                print(Fore.GREEN + "•Текс расшифрован•")
+                break
+            elif vibor_encypt_decrypt == '0':
+                break
     elif choice == '3':
         choice = Gammirovanie()
-        choice.key()
-        vibor_encypt_decrypt = input(
-            "•Зашифровать текст - 1\n" + "•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
-        if vibor_encypt_decrypt == '1':
-            File_way = file_check('txt', 'текстом', 'r')
-            choice.encrypt(File_way)
 
-            print(Fore.GREEN + "•Текс зашифрован•")
-        vibor_encypt_decrypt = input("•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
-        if vibor_encypt_decrypt == '2':
-            File_way = file_check('encrypt', 'зашифрованным текстом', 'r')
-            choice.decrypt(File_way)
+        ffff = True
+        while ffff:
+            Choice_na_key = input('•Сгенерировать ключь - Yes or No: ')
+            if Choice_na_key.lower() == 'yes':
+                choice.key()
+                ffff = False
+            elif Choice_na_key.lower() == 'no':
+                ffff = False
+            else:
+                print(Fore.RED + "•Неверная команда!")
+        while True:
+            vibor_encypt_decrypt = input(
+                "•Зашифровать текст - 1\n" + "•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
+            if vibor_encypt_decrypt == '1':
+                File_way = file_check('txt', 'текстом', 'r')
+                choice.encrypt(File_way)
 
-            print(Fore.GREEN + "•Текс расшифрован•")
-        elif vibor_encypt_decrypt == '0':
-            break
+                print(Fore.GREEN + "•Текс зашифрован•")
+                break
+            vibor_encypt_decrypt = input("•Расшифровать текст - 2\n" + "•Выход кнопка - 0\n" + "•Ваш выбор: ")
+            if vibor_encypt_decrypt == '2':
+                File_way = file_check('encrypt', 'зашифрованным текстом', 'r')
+                choice.decrypt(File_way)
+
+                print(Fore.GREEN + "•Текс расшифрован•")
+                break
+            elif vibor_encypt_decrypt == '0':
+                break
     elif choice == '0':
         flag = False
         break
