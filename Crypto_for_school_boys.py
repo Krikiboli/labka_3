@@ -99,14 +99,15 @@ class Zamena(Crypto):
                 print(Fore.RED + '•Неправильный текст')
 
     def __get_key(self):
-        key_way = file_check('key', 'ключом', 'r')
-        if information_from_json(key_way):
-            with open(key_way, 'r') as file:
-                dirty_key = json.load(file)
-            if dirty_key[0] == 'Zamena':
-                return dirty_key[1]
-            else:
-                print(Fore.RED + '•Неправильный ключ')
+        while True:
+            key_way = file_check('key', 'ключом', 'r')
+            if information_from_json(key_way):
+                with open(key_way, 'r') as file:
+                    dirty_key = json.load(file)
+                if dirty_key[0] == 'Zamena':
+                    return dirty_key[1]
+                else:
+                    print(Fore.RED + '•Неправильный ключ')
 
 
 class Perestanovka(Crypto):
@@ -162,14 +163,15 @@ class Perestanovka(Crypto):
             json.dump(key, file, ensure_ascii=False)
 
     def __get_key(self):
-        key_way = file_check('key', 'ключом', 'r')
-        if information_from_json(key_way):
-            with open(key_way, 'r') as file:
-                dirty_key = json.load(file)
-            if dirty_key[0] == 'Perestanovka':
-                return dirty_key[1]
-            else:
-                print(Fore.RED + '•Неправильный ключ')
+        while True:
+            key_way = file_check('key', 'ключом', 'r')
+            if information_from_json(key_way):
+                with open(key_way, 'r') as file:
+                    dirty_key = json.load(file)
+                if dirty_key[0] == 'Perestanovka':
+                    return dirty_key[1]
+                else:
+                    print(Fore.RED + '•Неправильный ключ')
 
     def decrypt(self, text_way):
         key = self.__get_key()
@@ -294,15 +296,16 @@ class Gammirovanie(Crypto):
             json.dump(crypt_key, file, ensure_ascii=False)
 
     def __get_key(self):
-        key_way = file_check('key', 'ключом', 'r')
-        if information_from_json(key_way):
-            with open(key_way, 'r', encoding='utf-8') as file:
-                dirty_key = json.load(file)
-            if dirty_key[0] == 'Gammirovanie':
-                self.__alph = dirty_key[1]
-                return dirty_key[2]
-            else:
-                print(Fore.RED + '•Неправильный ключ!')
+        while True:
+            key_way = file_check('key', 'ключом', 'r')
+            if information_from_json(key_way):
+                with open(key_way, 'r', encoding='utf-8') as file:
+                    dirty_key = json.load(file)
+                if dirty_key[0] == 'Gammirovanie':
+                    self.__alph = dirty_key[1]
+                    return dirty_key[2]
+                else:
+                    print(Fore.RED + '•Неправильный ключ!')
 
     def decrypt(self, text_way):
         key = self.__get_key()
